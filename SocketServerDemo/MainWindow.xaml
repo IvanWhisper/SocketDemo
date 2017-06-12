@@ -1,0 +1,50 @@
+﻿<Window x:Class="SocketServerDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SocketServerDemo"
+        mc:Ignorable="d"
+        Title="SocketServer测试" Height="480" Width="780" Icon="panda.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="215" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Label Content="Socket Server Demo" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Margin="10,0,0,10">
+                        <TextBlock Text="监听地址：" FontSize="14" FontFamily="微软雅黑" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <TextBox x:Name="txt_ip" FontSize="14" FontFamily="微软雅黑" VerticalAlignment="Center" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="TextBox"  Width="110"/>
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="10,0,0,10">
+                        <TextBlock Text="监听端口：" FontSize="14" FontFamily="微软雅黑" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <TextBox x:Name="txt_port" FontSize="14" FontFamily="微软雅黑" VerticalAlignment="Center" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="TextBox"  Width="110"/>
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="10,0,0,10">
+                        <Button x:Name="button" Content="开始" FontSize="14" FontFamily="微软雅黑" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Width="50"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2">
+                <DockPanel>
+                    <ListBox x:Name="lsb_client" Margin="10,10,10,10" />
+                </DockPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <DockPanel>
+                <ListBox x:Name="lsb_msg" Margin="10,10,10,10" />
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Window>
